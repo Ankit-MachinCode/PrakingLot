@@ -20,10 +20,7 @@ public class ParkingLotSystem {
 
     Stack<ParkingSpot> twoWhelerSpots;
     Stack<ParkingSpot> fourWhelerSpots;
-
     Stack<ParkingSpot> truckSpots;
-
-
     EntryGate entryGate;
     ExitGate exitGate;
 
@@ -35,6 +32,7 @@ public class ParkingLotSystem {
         twoWhelerSpots.push(ParkingSpot.builder().spotId(2).type(TwoWheler).build());
         twoWhelerSpots.push(ParkingSpot.builder().spotId(3).type(TwoWheler).build());
         twoWhelerSpots.push(ParkingSpot.builder().spotId(4).type(TwoWheler).build());
+
 
         fourWhelerSpots = new Stack<>();
         fourWhelerSpots.push(ParkingSpot.builder().spotId(1).type(FourWheler).build());
@@ -52,10 +50,8 @@ public class ParkingLotSystem {
         system.entryGate.generateParkingTicket(Vehicle.builder().licenseNumber("ABC").type(TwoWheler).build(), system.getParkingSpot(TwoWheler));
         system.entryGate.generateParkingTicket(Vehicle.builder().licenseNumber("ABC").type(TwoWheler).build(), system.getParkingSpot(TwoWheler));
         system.entryGate.generateParkingTicket(Vehicle.builder().licenseNumber("ABC").type(TwoWheler).build(), system.getParkingSpot(TwoWheler));
-        system.entryGate.generateParkingTicket(Vehicle.builder().licenseNumber("ABC").type(TwoWheler).build(), system.getParkingSpot(TwoWheler));
-        system.entryGate.generateParkingTicket(Vehicle.builder().licenseNumber("ABC").type(TwoWheler).build(), system.getParkingSpot(TwoWheler));
-
-
+        system.entryGate.generateParkingTicket(Vehicle.builder().licenseNumber("ABC").type(FourWheler).build(), system.getParkingSpot(FourWheler));
+        system.entryGate.generateParkingTicket(Vehicle.builder().licenseNumber("ABC").type(FourWheler).build(), system.getParkingSpot(FourWheler));
     }
 
     Optional<ParkingSpot> getParkingSpot(Type type) {
